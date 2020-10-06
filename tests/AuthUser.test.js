@@ -30,7 +30,7 @@ describe('Authorized User Tests', () => {
             .get('/api/v1/information')
             .set('authorization', `bearer ${loginRes.accessToken}`)
             .expect(200)
-
+        console.log(infoRes)
         expect(infoRes.length > 0).toBe(true)
         expect(infoRes[0].user).toBe(userInfoMock.name)
 
